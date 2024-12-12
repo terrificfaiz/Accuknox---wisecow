@@ -1,12 +1,12 @@
 
-FROM alpine:latest
+FROM node:18-alpine
 
 WORKDIR /app
 
-COPY  wisecow.sh .
+COPY . .
 
-RUN chmod +x wisecow.sh
+RUN npm install
 
-EXPOSE 4499
+EXPOSE 3000
 
-CMD ["./wisecow.sh"] 
+CMD ["npm", "start"]
