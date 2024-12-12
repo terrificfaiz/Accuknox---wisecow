@@ -1,17 +1,12 @@
-# Use Node.js as the base image (replace this if using Python or another language)
-FROM node:18-alpine
 
-# Set the working directory inside the container
+FROM alpine:latest
+
 WORKDIR /app
 
-# Copy all application files into the container
-COPY . .
+COPY  wisecow.sh .
 
-# Install dependencies
-RUN npm install
+RUN chmod +x wisecow.sh
 
-# Expose the application's port (change if your app uses a different port)
-EXPOSE 3000
+EXPOSE 4499
 
-# Command to start the application
-CMD ["npm", "start"]
+CMD ["./wisecow.sh"] 
