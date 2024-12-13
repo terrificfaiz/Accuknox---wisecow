@@ -23,6 +23,10 @@ jobs:
         docker build -t <your-dockerhub-username>/wisecow:latest .
         docker push <your-dockerhub-username>/wisecow:latest
 
+                      - name: Docker Login
+                uses: docker/login-action@v3.3.0
+            
+
     - name: Deploy to Kubernetes
       run: |
         kubectl apply -f k8s/deployment.yaml
