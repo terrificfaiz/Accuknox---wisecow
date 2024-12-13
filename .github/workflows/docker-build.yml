@@ -23,7 +23,7 @@ jobs:
         password: ${{ secrets.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 }} # DockerHub password stored in GitHub secrets
 
     - name: Build and Push Docker Image
-      uses: docker/build-push-action@v4
+      uses: docker pull memcached
       with:
         context: .
         push: true
